@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { QrCodeIcon } from '@heroicons/react/24/outline'
 
 export default function IntroSection() {
   const ref = useRef(null)
@@ -28,8 +27,8 @@ export default function IntroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold text-gray-900 mb-8"
         >
-          Unforgettable Events,<br />
-          <span className="text-brand-red">Perfectly Crafted</span>
+          If you need friends,<br />
+          <span className="text-brand-red">we will help you</span>
         </motion.h2>
 
         <motion.p
@@ -67,14 +66,6 @@ export default function IntroSection() {
               </button>
             </div>
           </form>
-
-          {/* Instagram QR Code Placeholder */}
-          <div className="flex flex-col items-center">
-            <div className="w-40 h-40 bg-white border-4 border-brand-red rounded-lg shadow-lg flex items-center justify-center">
-              <QrCodeIcon className="w-32 h-32 text-brand-red" />
-            </div>
-            <p className="text-sm text-gray-600 mt-3 font-semibold">Follow us on Instagram</p>
-          </div>
         </motion.div>
       </motion.div>
     </section>

@@ -8,28 +8,25 @@ export default function LandingSection({ scrollY }) {
   const opacity = useTransform(scrollY, [0, 200, 300], [1, 0.5, 0])
 
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="h-screen flex items-start justify-center pt-12 relative overflow-hidden">
       <motion.div
         style={{
           scale: logoScale,
           y: logoY,
           x: logoX,
         }}
-        className="relative z-10 flex flex-col items-center gap-6"
+        className="relative z-10 flex flex-col items-center"
       >
         <motion.img
-          src="/logo.jpeg"
+          src="/logo.png"
           alt="Cafe Takeover Logo"
-          className="w-96 md:w-[500px] h-auto"
-          style={{
-            mixBlendMode: 'multiply',
-          }}
+          className="w-[450px] md:w-[650px] h-auto"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: 'easeOut' }}
         />
         <motion.h1
-          className="text-5xl md:text-7xl font-bold text-brand-red tracking-tight"
+          className="text-5xl md:text-7xl font-bold text-brand-red tracking-tight -mt-20"
           style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -6,6 +6,7 @@ import PhoneMockups from './components/PhoneMockups'
 import EventTimeline from './components/EventTimeline'
 import Footer from './components/Footer'
 import DemonLogo from './components/DemonLogo'
+import InstagramButton from './components/InstagramButton'
 import DiscountModal from './components/DiscountModal'
 import './App.css'
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="relative">
+      <InstagramButton />
       <DemonLogo onClick={() => setIsModalOpen(true)} scrollY={scrollY} />
       <DiscountModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 

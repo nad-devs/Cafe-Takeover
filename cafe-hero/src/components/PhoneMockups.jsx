@@ -58,12 +58,12 @@ export default function PhoneMockups() {
             className="relative"
           >
             {/* Phone Frame */}
-            <div className="relative w-64 h-[500px] bg-black rounded-[2.5rem] p-3 shadow-2xl">
+            <div className="relative w-64 h-[500px] bg-black rounded-5xl p-3 shadow-2xl">
               {/* Notch */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"></div>
 
               {/* Screen */}
-              <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
+              <div className="w-full h-full bg-gray-900 rounded-4xl overflow-hidden relative">
                 <img
                   src={phone.videoPlaceholder}
                   alt={`Event ${phone.id}`}
@@ -86,7 +86,7 @@ export default function PhoneMockups() {
             </div>
 
             {/* Glow Effect */}
-            <div className="absolute inset-0 bg-brand-red/20 rounded-[2.5rem] blur-2xl -z-10 scale-105"></div>
+            <div className="absolute inset-0 bg-brand-red/20 rounded-5xl blur-2xl -z-10 scale-105"></div>
           </motion.div>
         ))}
       </div>

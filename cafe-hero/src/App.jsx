@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useState } from 'react'
+import { useScroll } from 'framer-motion'
 import LandingSection from './components/LandingSection'
 import IntroSection from './components/IntroSection'
 import PhoneMockups from './components/PhoneMockups'
@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import DemonLogo from './components/DemonLogo'
 import InstagramButton from './components/InstagramButton'
 import DiscountModal from './components/DiscountModal'
+import EventSignup from './components/EventSignup'
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
       <LandingSection scrollY={scrollY} />
       <IntroSection scrollY={scrollY} />
+      <EventSignup />
       <PhoneMockups />
       <EventTimeline />
       <Footer />

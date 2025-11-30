@@ -4,7 +4,6 @@ export default function LandingSection({ scrollY }) {
   // Transform logo size and position based on scroll
   const logoScale = useTransform(scrollY, [0, 300], [1, 0.15])
   const logoY = useTransform(scrollY, [0, 300], [0, -45])
-  const logoX = useTransform(scrollY, [0, 300], [0, 45])
   const opacity = useTransform(scrollY, [0, 200, 300], [1, 0.5, 0])
 
   return (
@@ -13,7 +12,6 @@ export default function LandingSection({ scrollY }) {
         style={{
           scale: logoScale,
           y: logoY,
-          x: logoX,
         }}
         className="relative z-10 flex flex-col items-center"
       >

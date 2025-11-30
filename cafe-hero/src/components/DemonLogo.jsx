@@ -8,7 +8,7 @@ export default function DemonLogo({ onClick, scrollY }) {
   return (
     <motion.div
       style={{ opacity, scale }}
-      className="fixed top-6 right-6 z-50 cursor-pointer"
+      className="fixed top-6 left-6 z-50 cursor-pointer"
       onClick={onClick}
       whileHover={{ scale: 1.1, rotate: 5 }}
       whileTap={{ scale: 0.95 }}

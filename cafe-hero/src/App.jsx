@@ -16,12 +16,12 @@ function App() {
 
   return (
     <div className="relative">
-      <InstagramButton />
+      <InstagramButton scrollY={scrollY} />
       <DemonLogo onClick={() => setIsModalOpen(true)} scrollY={scrollY} />
       <DiscountModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       <LandingSection scrollY={scrollY} />
-      <IntroSection />
+      <IntroSection scrollY={scrollY} />
       <PhoneMockups />
       <EventTimeline />
       <Footer />

@@ -1,17 +1,19 @@
-import { motion } from 'framer-motion'
+import { motion, useTransform } from 'framer-motion'
 import { Instagram } from 'lucide-react'
 
-export default function InstagramButton() {
+export default function InstagramButton({ scrollY }) {
   const handleClick = () => {
     window.open('https://www.instagram.com/cafetakeover.in/', '_blank')
   }
 
+  // Instagram appears in top-right after scrolling (same as DemonLogo was)
+  const opacity = useTransform(scrollY, [250, 350], [0, 1])
+  const scale = useTransform(scrollY, [250, 350], [0.5, 1])
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-      className="fixed top-6 left-6 z-50 cursor-pointer"
+      style={{ opacity, scale }}
+      className="fixed top-6 right-6 z-50 cursor-pointer"
       onClick={handleClick}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}

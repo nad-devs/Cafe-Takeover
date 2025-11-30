@@ -44,7 +44,7 @@ export default function PhoneMockups() {
         transition={{ duration: 0.8 }}
         className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-20"
       >
-        Experience the <span className="text-brand-red">Magic</span>
+        Our Personal <span className="text-brand-red">Favourites</span>
       </motion.h2>
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">

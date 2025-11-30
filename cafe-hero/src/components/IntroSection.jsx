@@ -1,11 +1,18 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { motion, useTransform } from 'framer-motion'
+import { useState } from 'react'
 
-export default function IntroSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
+export default function IntroSection({ scrollY }) {
   const [email, setEmail] = useState('')
+
+  // Scroll-based animations - text appears as logo shrinks
+  const headingOpacity = useTransform(scrollY, [100, 250], [0, 1])
+  const headingY = useTransform(scrollY, [100, 250], [30, 0])
+  
+  const paragraphOpacity = useTransform(scrollY, [150, 300], [0, 1])
+  const paragraphY = useTransform(scrollY, [150, 300], [30, 0])
+  
+  const formOpacity = useTransform(scrollY, [200, 350], [0, 1])
+  const formY = useTransform(scrollY, [200, 350], [30, 0])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -14,37 +21,25 @@ export default function IntroSection() {
   }
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center justify-center px-6 py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="max-w-4xl mx-auto text-center"
-      >
+    <section className="-mt-[40vh] relative z-10 flex items-center justify-center px-6 py-20">
+      <div className="max-w-4xl mx-auto text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          style={{ opacity: headingOpacity, y: headingY }}
           className="text-4xl md:text-6xl font-bold text-gray-900 mb-8"
         >
-          If you need friends,<br />
-          <span className="text-brand-red">we will help you</span>
+          Hangouts that feel like<br />
+          <span className="text-brand-red">school break again.</span>
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          style={{ opacity: paragraphOpacity, y: paragraphY }}
           className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed"
         >
-          We create immersive experiences that turn ordinary nights into extraordinary memories.
-          From intimate gatherings to grand celebrations, we handle every detail with precision and creativity.
+          Where the only thing you need to worry about is showing up.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          style={{ opacity: formOpacity, y: formY }}
           className="flex flex-col md:flex-row items-center justify-center gap-8 mt-16"
         >
           {/* Email Input */}
@@ -67,7 +62,7 @@ export default function IntroSection() {
             </div>
           </form>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   )
 }
